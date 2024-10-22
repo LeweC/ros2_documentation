@@ -8,11 +8,11 @@ Marker: Display types
 **Time:** 15 Minutes
 
 .. contents:: Contents
-   :depth: 3
+   :depth: 2
    :local:
 
 
-Backround
+Background
 ---------
 The Markers display allows programmatic addition of various primitive shapes to the 3D view by sending a
 `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/Marker.msg>`_ or
@@ -21,7 +21,7 @@ The Markers display allows programmatic addition of various primitive shapes to 
 .. image:: images/marker_overview.png
 
 ..
-    This is comment will be added to the file once the Markers-Sending-Basic-Shapes-CPP is merged.
+    This is a comment, the next line will be added to the file once the Markers-Sending-Basic-Shapes-CPP is merged to point to the start of the tutorial series.
     The :doc:`Marker: Sending Basic Shapes <../Markers-Sending-Basic-Shapes-CPP/Markers-Sending-Basic-Shapes-CPP>` that tutorial begins a series of tutorials on sending markers.
 
 The Marker Message
@@ -68,7 +68,7 @@ message and publishing it:
     marker.color.b = 0.0f;
     marker.color.a = 1.0;   // Don't forget to set the alpha!
 
-    //only if using a MESH_RESOURCE marker type:
+    // only if using a MESH_RESOURCE marker type:
     marker.mesh_resource = "package://pr2_description/meshes/base_v0/base.dae";
 
     marker.lifetime = rclcpp::Duration::from_nanoseconds(0);
