@@ -13,7 +13,7 @@ Marker: Display types
 
 
 Background
----------
+----------
 The Markers display allows programmatic addition of various primitive shapes to the 3D view by sending a
 `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/Marker.msg>`_ or
 `visualization_msgs/msg/MarkerArray <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/MarkerArray.msg>`_ message.
