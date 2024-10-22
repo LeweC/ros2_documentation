@@ -15,14 +15,14 @@ Marker: Display types
 Backround
 ---------
 The Markers display allows programmatic addition of various primitive shapes to the 3D view by sending a
-`visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/rolling/visualization_msgs/msg/Marker.msg>`_ or
-`visualization_msgs/msg/MarkerArray <https://github.com/ros2/common_interfaces/blob/rolling/visualization_msgs/msg/MarkerArray.msg>`_ message.
+`visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/Marker.msg>`_ or
+`visualization_msgs/msg/MarkerArray <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/MarkerArray.msg>`_ message.
 
 .. image:: images/marker_overview.png
 
 ..
     This is comment will be added to the file once the Markers-Sending-Basic-Shapes-CPP is merged.
-    The :doc:`Marker: Sending Basic Shapes <../Markers-Sending-Basic-Shapes-CPP/Markers-Sending-Basic-Shapes-CPP>` tutorial begins a series of tutorials on sending markers.
+    The :doc:`Marker: Sending Basic Shapes <../Markers-Sending-Basic-Shapes-CPP/Markers-Sending-Basic-Shapes-CPP>` that tutorial begins a series of tutorials on sending markers.
 
 The Marker Message
 ------------------
@@ -34,7 +34,7 @@ First we need to create a publisher and set a topic:
 
     auto marker_pub = node->create_publisher<visualization_msgs::msg::Marker>("visualization_marker", 1);
 
-After that it is as simple as filling out a `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/rolling/visualization_msgs/msg/Marker.msg>`_
+After that it is as simple as filling out a `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/Marker.msg>`_
 message and publishing it:
 
 .. code-block:: C++
@@ -75,7 +75,7 @@ message and publishing it:
 
     marker_pub->publish(marker);
 
-There is also a `visualization_msgs/msg/MarkerArray <https://github.com/ros2/common_interfaces/blob/rolling/visualization_msgs/msg/MarkerArray.msg>`_ message, which lets you publish many markers at once.
+There is also a `visualization_msgs/msg/MarkerArray <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/MarkerArray.msg>`_ message, which lets you publish many markers at once.
 
 2 Message Parameters
 ^^^^^^^^^^^^^^^^^^^^
@@ -189,7 +189,7 @@ Use ``scale.z`` to specify the height.
 
 .. image:: images/LineStripMarker.png
 
-Line strips use the points member of the `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/rolling/visualization_msgs/msg/Marker.msg>`_ message.
+Line strips use the points member of the `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/Marker.msg>`_ message.
 It will draw a line between every two consecutive points, so 0-1, 1-2, 2-3, 3-4, 4-5...
 
 Line strips also have some special handling for scale: only ``scale.x`` is used and it controls the width of the line segments.
@@ -201,7 +201,7 @@ Note that ``pose`` is still used (the points in the line will be transformed by 
 
 .. image:: images/LineListMarker.png
 
-Line lists use the points member of the `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/rolling/visualization_msgs/msg/Marker.msg>`_ message. It will draw a line between each pair of points, so 0-1, 2-3, 4-5, ...
+Line lists use the points member of the `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/Marker.msg>`_ message. It will draw a line between each pair of points, so 0-1, 2-3, 4-5, ...
 
 Line lists also have some special handling for scale: only ``scale.x`` is used and it controls the width of the line segments.
 
@@ -213,11 +213,11 @@ Note that ``pose`` is still used (the points in the line will be transformed by 
 .. image:: images/CubeListMarker.png
 
 A cube list is a list of cubes with all the same properties except their positions.
-Using this object type instead of a `visualization_msgs/msg/MarkerArray <https://github.com/ros2/common_interfaces/blob/rolling/visualization_msgs/msg/MarkerArray.msg>`_ allows RViz to batch-up rendering,
+Using this object type instead of a `visualization_msgs/msg/MarkerArray <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/MarkerArray.msg>`_ allows RViz to batch-up rendering,
 which causes them to render much faster.
 The caveat is that they all must have the same scale.
 
-The ``points`` member of the `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/rolling/visualization_msgs/msg/Marker.msg>`_ message is used for the position of each cube.
+The ``points`` member of the `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/Marker.msg>`_ message is used for the position of each cube.
 
 3.8 Sphere List (SPHERE_LIST=7)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -225,11 +225,11 @@ The ``points`` member of the `visualization_msgs/msg/Marker <https://github.com/
 .. image:: images/SphereListMarker.png
 
 A sphere list is a list of spheres with all the same properties except their positions.
-Using this object type instead of a `visualization_msgs/msg/MarkerArray <https://github.com/ros2/common_interfaces/blob/rolling/visualization_msgs/msg/MarkerArray.msg>`_ allows rviz to batch-up rendering,
+Using this object type instead of a `visualization_msgs/msg/MarkerArray <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/MarkerArray.msg>`_ allows rviz to batch-up rendering,
 which causes them to render much faster.
 The caveat is that they all must have the same scale.
 
-The ``points`` member of the `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/rolling/visualization_msgs/msg/Marker.msg>`_ message is used for the position of each sphere.
+The ``points`` member of the `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/Marker.msg>`_ message is used for the position of each sphere.
 
 Note that ``pose`` is still used (the ``points`` in the line will be transformed by them), and the lines will be correct relative to the ``frame id`` specified in the header.
 
@@ -238,7 +238,7 @@ Note that ``pose`` is still used (the ``points`` in the line will be transformed
 
 .. image:: images/PointsMarker.png
 
-Uses the ``points`` member of the `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/rolling/visualization_msgs/msg/Marker.msg>`_ message.
+Uses the ``points`` member of the `visualization_msgs/msg/Marker <https://github.com/ros2/common_interfaces/blob/{DISTRO}/visualization_msgs/msg/Marker.msg>`_ message.
 
 ``Points`` have some special handling for scale: ``scale.x`` is point width, ``scale.y`` is point height
 
@@ -278,7 +278,7 @@ If the ``mesh_use_embedded_materials`` flag is set to true and the mesh is of a 
 the material defined in that file will be used instead of the color defined in the marker.
 
 Since version [1.8], even when ``mesh_use_embedded_materials`` is true,
-if the marker color is set to anything other than r=0,g=0,b=0,a=0 the marker color and alpha will be used to tint the mesh with the embedded material.
+if the marker ``color`` is set to anything other than ``r=0``, ``g=0``, ``b=0``, ``a=0`` the marker ``color`` and ``alpha`` will be used to tint the mesh with the embedded material.
 
 3.12 Triangle List (TRIANGLE_LIST=11)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
